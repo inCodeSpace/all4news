@@ -1,0 +1,111 @@
+/*À*/
+html, body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #F0F0F0;
+}
+
+#logo {
+	height: 87px;
+	width: 100%;
+	overflow: hidden;
+}
+#lineLogo {
+	height: 47px;
+	width: 100%;
+	position: absolute;
+	background: -moz-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -moz-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -moz-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
+	background-size: 15px 15px, 15px 15px, 100% 100%;
+	background-repeat: repeat, repeat, no-repeat;
+	background-position: 1px 1px, 0px 0px, center center;
+	background-color: #bababa;
+	opacity: 0.5;
+	z-index: 1;
+	top: 39px;
+	border-top: 1px silver solid;
+	border-bottom: 1px silver solid;
+	box-shadow: #A5CFEB 0px 0px 7px;
+	text-align: center;
+	line-height: 52px;
+	color: brown;
+	font-size: 42px;
+	word-spacing: 8px;
+	letter-spacing: 5px;
+	font-weight: 900;
+	font-family: 'Freestyle Script';
+}
+#logoImg {
+	width: 72px;
+	height: 85px;
+	background: url(../img/4newsLogo1.png) no-repeat;
+	z-index: 2;
+	position: relative;
+	/*margin: auto;*/
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+#logoImg:hover {
+	background: url(../img/4newsLogo2.png) no-repeat;
+}
+
+#conteiner {
+	min-height: 300px;
+	width: 1300px;
+	margin: auto;
+	margin-top: 3px;
+	overflow: hidden;
+	background-color: white;
+	border-radius: 15px;
+	padding: 10px;
+	box-shadow: #E2E2E2 -5px 5px 5px, #E2E2E2 5px 5px 5px;
+	text-align: center;
+}
+
+ul {
+	margin-top: 0px;
+	padding-left: 0px;
+}
+
+a {
+	font-size: 22px;
+	text-decoration: none;
+	color: #4F4F4F;
+	outline: none;
+}
+
+a:hover {
+	color: green;
+}
+
+a:visited {
+	/*color: #B6B6B6;*/
+	color: grey;
+}
+
+#imgText {
+	font-size: 27px;
+	color: orange;
+	font-family: Tahoma;
+	margin-bottom: 5px;
+	letter-spacing: 9px;
+}
+
+#panel_title {
+	display: block;
+	border: 1px dashed green;
+	background-color: #F0FAFB;
+	text-decoration: none;
+	color: #3C3CFF;
+	border-radius: 15px 15px 0px 0px;
+	height: 30px;
+	line-height: 30px;
+	box-shadow: #DFDFDF -3px -3px 5px, #DFDFDF 3px -3px 5px;
+}
+
+#panel {
+	border: 1px dashed green;
+	border-top: 0px;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
