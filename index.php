@@ -17,13 +17,14 @@
  	 <!-- 2.1)URLs -->
 			<?php
 
-			define("URL_DATA", "data\urlData.txt"); //файл с URL
-			define("IMG_DATA", "data\imgData.txt"); //файл с Img
+			define("URL_DATA", "data/urlData.txt"); //файл с URL
+			//define("IMG_DATA", "data/imgData.txt"); //файл с Img
 			// > Получение данных из файла URL
 			function getUrlData() {
 				if( !file_exists(URL_DATA) ) {
-					return false;
+echo "No data!";
 				}
+echo "oK1";
 				$urlArr = array();
 				$urlFile = file(URL_DATA);
 				foreach($urlFile as $arr) {
@@ -33,6 +34,7 @@
 						$arrData['title'] = $title;
 					$urlArr[] = $arrData;
 				}
+print_r($urlArr);
 				if( count($urlArr) != 0 )	{
 					prnUrl($urlArr); //если массив не пустой тогда печаем контент
 				}	
@@ -60,11 +62,15 @@
 
 			// > Получение данных из файла URL
 			function getImgData() {
-				if( !file_exists(IMG_DATA) ) {
-					return false;
+$imgFile = "data/imgData.txt";
+				if( !file_exists($imgFile) ) {
+					// return false;
+echo "No imgData";
 				}
+echo "oK2";				
 				$imgArr = array();
-				$imgFile = file(IMG_DATA);
+// $imgFile = file(IMG_DATA);
+				$imgFile = file($imgFile);
 				foreach($imgFile as $arr) {
 					list($url) = explode("|", $arr);
 					$arrData = array();
@@ -93,7 +99,7 @@
 					<script src="js/scripts.js"></script>
 				';
 			}
-			
+
 			getUrlData();
 			getImgData();		
 			?>
