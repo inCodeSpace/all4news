@@ -1,7 +1,7 @@
 <?php
 define("URL_DATA", "data/urlData.txt"); //файл с URL
 define("IMG_DATA", "data/imgData.txt"); //файл с Img
-define("IP_DATA", "10.251.1.157"); //константа *значение у них на сервере*
+define("PSW_DATA", "add_data_to_this_site"); //константа
 $changePage = basename($_SERVER['PHP_SELF']) . '?change=true';
 // > Получение данных из файла URL
 function getUrlData() {
@@ -18,7 +18,7 @@ function getUrlData() {
 		$urlArr[] = $arrData;
 	}
 	if( count($urlArr) != 0 )	{
-		prnUrl($urlArr); //если массив не пустой тогда печаем контент
+		prnUrl( array_reverse($urlArr) ); //если массив не пустой тогда печаем контент
 	}	
 }
 
@@ -56,7 +56,7 @@ function getImgData() {
 		$imgArr[] = $arrData;
 	}
 	if( count($imgArr) != 0 )	{
-		prnImg($imgArr); //если массив не пустой тогда печаем контент
+		prnImg( array_reverse($imgArr) ); //если массив не пустой тогда печаем контент
 	}	
 }
 
@@ -186,13 +186,3 @@ function clearData($fileName) {
 	fclose($fp);
 	header('Location: '. $changePage);
 }
-
-// - - - Обработка IP - - - //
-// - - - - - - - - - - - - //
-function checkIP() {
-	if( $_SERVER['REMOTE_ADDR'] != IP_DATA ) {
-		header('Location: '. $_SERVER['PHP_SELF']);
-	}
-}
-// > Добавление сторонних IP в файл
-

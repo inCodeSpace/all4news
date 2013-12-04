@@ -1,14 +1,11 @@
 <?php
 require_once('php/libClientUrl.php');
-echo $_SERVER['REMOTE_ADDR'] . '<br>';
 //для обработки POST-данных
-if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-	checkIP();
+if( ( $_SERVER['REQUEST_METHOD'] == 'POST' ) && ( $_GET['change'] == PSW_DATA ) ) {
 	postSwitch();
 }
 //для изменения title
-if( isset( $_GET['change'] ) && ( $_GET['change'] == 'true' ) ) {
-	checkIP();
+if( isset( $_GET['change'] ) ) {
 	$title = "SkySender";
 } else {
 	$title = "Ссылки и Картинки";
@@ -30,13 +27,13 @@ if( isset( $_GET['change'] ) && ( $_GET['change'] == 'true' ) ) {
 				News and URLs
 			</a>
 		</div>
-		<a href="<?= basename($_SERVER['PHP_SELF']).'?change=true'; ?>" id="logoImg"></a>		
+		<a href="<?= basename($_SERVER['PHP_SELF']); ?>" id="logoImg"></a>		
 	</div>
  <!-- 2)Content -->
 	<div id="conteiner">		
  	 <!-- 2.1)URLs -->
 			<?php
-			if( isset( $_GET['change'] ) && ( $_GET['change'] == 'true' ) ) {
+			if( isset( $_GET['change'] ) && ( $_GET['change'] == PSW_DATA ) ) {
 				//Случай если вызывается ф-онал для работы с данными
 				prnChangeInputs();
 			} else {		
