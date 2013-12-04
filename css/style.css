@@ -1,4 +1,3 @@
-/*А*/
 html, body {
 	padding: 0px;
 	margin: 0px;
@@ -15,6 +14,9 @@ html, body {
 	width: 100%;
 	position: absolute;
 	background: -moz-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -moz-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -moz-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
+	background: -o-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -o-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -o-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
+	background: radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
+	background: -webkit-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -webkit-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -webkit-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
 	background-size: 15px 15px, 15px 15px, 100% 100%;
 	background-repeat: repeat, repeat, no-repeat;
 	background-position: 1px 1px, 0px 0px, center center;
@@ -26,15 +28,21 @@ html, body {
 	border-bottom: 1px silver solid;
 	box-shadow: #A5CFEB 0px 0px 7px;
 	text-align: center;
-	line-height: 52px;
-	color: brown;
-	font-size: 42px;
-	word-spacing: 8px;
-	letter-spacing: 5px;
-	font-weight: 900;
-	font-family: 'Freestyle Script';
 }
+	#lineLogoHref {
+		line-height: 52px;
+		color: brown;
+		font-size: 42px;
+		word-spacing: 8px;
+		letter-spacing: 5px;
+		font-weight: 900;
+		font-family: 'Freestyle Script';
+	}
+	#lineLogoHref:hover {
+		color: red;
+	}
 #logoImg {
+	display: block;
 	width: 72px;
 	height: 85px;
 	background: url(../img/4newsLogo1.png) no-repeat;
@@ -72,6 +80,7 @@ a {
 	font-size: 22px;
 	text-decoration: none;
 	color: #4F4F4F;
+	color: black;
 	outline: none;
 }
 
@@ -81,6 +90,7 @@ a:hover {
 
 a:visited {
 	/*color: #B6B6B6;*/
+	color: #4F4F4F;
 	color: grey;
 }
 
@@ -109,4 +119,73 @@ a:visited {
 	border-top: 0px;
 	overflow-y: hidden;
 	overflow-x: auto;
+}
+
+/*Обработка данных*/
+.mForm {
+	border: 1px solid #FFB88B;
+	border-radius: 2px;
+	padding: 6px;
+	width: 600px;
+	background-color: #F9F9F9;
+	box-shadow: #A5CFEB 0px 0px 7px;
+	border-radius: 10px;
+}
+.form1 {
+	float: left;
+	margin-left: 20px;
+}
+.form2 {
+	float: right;
+	margin-right: 20px;
+}
+.mForm input, #m_textarea1 {
+	border: 2px solid #A2A2A2;
+	border-radius: 2px;
+	padding: 2px;
+	background-color: #F9F9F9;
+}
+.mFormText {
+	font-size: 22px;
+	color: navy;	
+}
+.inputData {
+	min-width: 80px;
+	min-height: 80px;
+	max-width: 500px;
+	max-height: 120px;
+	border: 2px solid #A2A2A2;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.sendDiv {
+	border: 2px solid #8BB2FF;
+	border-radius: 10px;
+	padding: 5px;
+	display: inline-block;
+	/*width: 80px;*/
+	text-align: center;
+	background: #ffffcc;
+	margin: auto;
+}
+
+.sendInp {
+	cursor: pointer;
+}
+.sendInp:hover {
+	background-color: orange;
+}
+.formBut {
+	border: none;
+	box-shadow: none;
+	background-color: white;
+	margin-top: 12px;
+}
+.inpButt {
+	background-color: #F8D1D1;
+}
+.formButLeft {	
+	float: left;
+	margin-top: -8px;
 }

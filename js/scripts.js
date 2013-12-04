@@ -37,13 +37,17 @@ function changePanel() {
 		*/
 	if( !myPanel.style.height || (myPanel.style.display == "none") ) {
 		if(myPanel.style.display == "none") {
-			myPanel.style.display = "block"; // или просто ="" (отобразим панель)
-			urlBox.style.display = "none"; //спрятать контент с URLs
+			if( urlBox != null ) { //если он существует
+				urlBox.style.display = "none"; //спрятать контент с URLs
+			}
+			myPanel.style.display = "block"; // или просто ="" (отобразим панель)			
 			expandPanel(); //запустим ф-ию разворачивания панели
 			myPanTit.firstChild.nodeValue = "Свернуть";
 		} else {
 			myPanel.originalHeight = myPanel.clientHeight;
-			urlBox.style.display = "block"; //спрятать контент с URLs
+			if( urlBox != null ) { //если он существует
+				urlBox.style.display = "block"; //спрятать контент с URLs
+			}
 			collapsePanel();
 		}
 	}
