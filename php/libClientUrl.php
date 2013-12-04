@@ -1,7 +1,7 @@
 <?php
 define("URL_DATA", "data/urlData.txt"); //файл с URL
 define("IMG_DATA", "data/imgData.txt"); //файл с Img
-define("IP_DATA", "94.244.131.59"); //константа
+define("IP_DATA", "10.251.1.157"); //константа *значение у них на сервере*
 $changePage = basename($_SERVER['PHP_SELF']) . '?change=true';
 // > Получение данных из файла URL
 function getUrlData() {
