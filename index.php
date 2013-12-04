@@ -1,13 +1,14 @@
 <?php
 require_once('php/libClientUrl.php');
+echo $_SERVER['REMOTE_ADDR'] . '<br>';
 //для обработки POST-данных
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-	checkIP();
+	// checkIP();
 	postSwitch();
 }
 //для изменения title
 if( isset( $_GET['change'] ) && ( $_GET['change'] == 'true' ) ) {
-	checkIP();
+	// checkIP();
 	$title = "SkySender";
 } else {
 	$title = "Ссылки и Картинки";
