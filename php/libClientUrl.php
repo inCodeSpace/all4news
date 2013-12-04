@@ -1,6 +1,6 @@
 <?php
-define("URL_DATA", "data\urlData.txt"); //файл с URL
-define("IMG_DATA", "data\imgData.txt"); //файл с Img
+define("URL_DATA", "data/urlData.txt"); //файл с URL
+define("IMG_DATA", "data/imgData.txt"); //файл с Img
 // > Получение данных из файла URL
 function getUrlData() {
 	if( !file_exists(URL_DATA) ) {
