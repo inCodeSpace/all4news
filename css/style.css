@@ -195,6 +195,7 @@ a:visited {
 	padding-left: 10px;
 	padding-right: 10px;
 	box-shadow: #A5CFEB 0px 0px 7px;
+	display: inline-block;
 }
 
 #clearButtC:hover {
