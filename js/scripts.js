@@ -3,7 +3,9 @@ var step = 2000;
 var urlBox = document.getElementById("urlBox");
 var myPanel = document.getElementById("panel");
 var myPanTit = document.getElementById("panel_title");
+var myPanTit2 = document.getElementById("panel_title2");
 myPanel.style.display = "none";
+
 //----------2)Ф-ия Разворачивания панели-------------//
 function expandPanel() { 
 	if (myPanel.clientHeight < myPanel.originalHeight - step) {
@@ -11,6 +13,7 @@ function expandPanel() {
 		myPanel.style.height = h+"px";
 		setTimeout("expandPanel()", 70);		
 	} else {
+		myPanTit2.style.display = "block";
 		myPanel.style.height = "";
 		var myPanTit = document.getElementById("panel_title");
 		myPanTit.firstChild.nodeValue = "Свернуть";
@@ -19,6 +22,7 @@ function expandPanel() {
 //----------3)Ф-ия Сворачивания панели-------------//
 function collapsePanel() {
 	if(myPanel.clientHeight >= step) {
+		myPanTit2.style.display = "none";
 		var h = myPanel.clientHeight - step;
 		myPanel.style.height = h+"px";
 		setTimeout("collapsePanel()", 70);

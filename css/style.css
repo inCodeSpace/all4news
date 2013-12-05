@@ -107,18 +107,30 @@ a:visited {
 	border: 1px dashed green;
 	background-color: #F0FAFB;
 	text-decoration: none;
-	color: #3C3CFF;
+	color: red;
 	border-radius: 15px 15px 0px 0px;
 	height: 30px;
 	line-height: 30px;
-	box-shadow: #DFDFDF -3px -3px 5px, #DFDFDF 3px -3px 5px;
+	box-shadow: #F0D5FD -3px -2px 5px, #F0D5FD 3px -3px 5px;
 }
-
+#panel_title2 {
+	display: none;
+	border: 1px dashed green;
+	border-top: none;
+	background-color: #F0FAFB;
+	text-decoration: none;
+	color: red;
+	border-radius: 0px 0px 15px 15px;
+	height: 30px;
+	line-height: 30px;
+	box-shadow: #F0D5FD -2px 2px 5px, #F0D5FD 3px 3px 5px;	
+}
 #panel {
 	border: 1px dashed green;
 	border-top: 0px;
 	overflow-y: hidden;
 	overflow-x: auto;
+	box-shadow: #F0D5FD 3px 3px 5px, #F0D5FD -3px 3px 5px;
 }
 
 /*Обработка данных*/

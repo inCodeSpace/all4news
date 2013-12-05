@@ -70,7 +70,7 @@ function getImgData() {
 function prnImg($imgArr) {
 	echo '
 		<div id="imgText">Картинки:</div>
-		<a id="panel_title" href="javascript:changePanel()">Развернуть</a>
+		<a id="panel_title" href="javascript:changePanel()">Развернуть</a>		
 		<div id="panel">
 	';
 	foreach ($imgArr as $arr) {
@@ -79,8 +79,9 @@ function prnImg($imgArr) {
 		';
 	}
 	echo '
-			<script src="js/scripts.js"></script>
 		</div>
+		<a id="panel_title2" href="javascript:changePanel()">Свернуть</a>
+		<script src="js/scripts.js"></script>
 	';
 }
 
