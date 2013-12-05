@@ -11,7 +11,7 @@ function expandPanel() {
 	if (myPanel.clientHeight < myPanel.originalHeight - step) {
 		var h = myPanel.clientHeight + step;
 		myPanel.style.height = h+"px";
-		setTimeout("expandPanel()", 70);		
+		setTimeout("expandPanel()", 70);	
 	} else {
 		myPanTit2.style.display = "block";
 		myPanel.style.height = "";
@@ -27,6 +27,7 @@ function collapsePanel() {
 		myPanel.style.height = h+"px";
 		setTimeout("collapsePanel()", 70);
 	}else {
+		myPanTit2.style.display = "none";
 		myPanel.style.display = "none";
 		var myPanTit = document.getElementById("panel_title");
 		myPanTit.firstChild.nodeValue = "Развернуть";
