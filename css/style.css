@@ -159,7 +159,7 @@ a:visited {
 	border-radius: 5px;
 }
 
-.sendDiv {
+.sendDiv, #clearButtC {
 	border: 2px solid #8BB2FF;
 	border-radius: 10px;
 	padding: 5px;
@@ -188,4 +188,16 @@ a:visited {
 .formButLeft {	
 	float: left;
 	margin-top: -8px;
+}
+
+#clearButtC {
+	color: #1740CA;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-shadow: #A5CFEB 0px 0px 7px;
+}
+
+#clearButtC:hover {
+	color: green;
+	background-color: #F0F0F0;
 }

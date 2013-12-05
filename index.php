@@ -10,6 +10,12 @@ if( isset( $_GET['change'] ) ) {
 } else {
 	$title = "Ссылки и Картинки";
 }
+//Обработка Очистки кнопкой контента
+if( isset( $_GET['clear'] ) && ( $_GET['clear'] == 'All' ) ) {
+	clearData(URL_DATA);
+	clearData(IMG_DATA);
+	header( 'Location: ' . basename($_SERVER['PHP_SELF']) );
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,10 +42,10 @@ if( isset( $_GET['change'] ) ) {
 			if( isset( $_GET['change'] ) && ( $_GET['change'] == PSW_DATA ) ) {
 				//Случай если вызывается ф-онал для работы с данными
 				prnChangeInputs();
-			} else {		
-			 	//библиотека подгрузки данных URL
+			} else {
 				getUrlData();
 				getImgData();
+				clearButtClient(); //Вывод кнопки очиски контента
 			}
 			?>
 		</div>

@@ -3,6 +3,8 @@ define("URL_DATA", "data/urlData.txt"); //файл с URL
 define("IMG_DATA", "data/imgData.txt"); //файл с Img
 define("PSW_DATA", "add_data_to_this_site"); //константа
 $changePage = basename($_SERVER['PHP_SELF']) . '?change=true';
+$pointA = 0; //переменная условие для вывода кнопки очиски (на клиенте), помечается при выводе контента
+$pointB = 0;
 // > Получение данных из файла URL
 function getUrlData() {
 	if( !file_exists(URL_DATA) ) {
@@ -19,6 +21,8 @@ function getUrlData() {
 	}
 	if( count($urlArr) != 0 )	{
 		prnUrl( array_reverse($urlArr) ); //если массив не пустой тогда печаем контент
+		global $pointA;
+		$pointA = 1;
 	}	
 }
 
@@ -57,6 +61,8 @@ function getImgData() {
 	}
 	if( count($imgArr) != 0 )	{
 		prnImg( array_reverse($imgArr) ); //если массив не пустой тогда печаем контент
+		global $pointB;
+		$pointB = 1;
 	}	
 }
 
@@ -73,7 +79,8 @@ function prnImg($imgArr) {
 		';
 	}
 	echo '
-		<script src="js/scripts.js"></script>
+			<script src="js/scripts.js"></script>
+		</div>
 	';
 }
 
@@ -185,4 +192,15 @@ function clearData($fileName) {
 	$fp = fopen($fileName, "w");
 	fclose($fp);
 	header('Location: '. $changePage);
+}
+
+// > Вывод кнопки очистки на клиентской странице
+function clearButtClient() {
+	global $pointA, $pointB;
+	if( ($pointA == 1) || ($pointB == 1) ) { //если есть какой нибудь контент
+		echo '
+			<br>
+			<a href="'.basename($_SERVER['PHP_SELF']).'?clear=All" id="clearButtC">Просмотренно</a>
+		';
+	}
 }
