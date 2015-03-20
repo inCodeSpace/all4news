@@ -6,7 +6,7 @@ use yii\helpers\Html;
 <ul id="urlBox">
     <?php
     foreach ($news as $arr) {
-        echo '<li>' . Html::a($arr['title'], $arr['url']) . "</li>";
+        echo '<li>' . Html::a($arr['title'], $arr['url'], ['target' => '_blank']) . "</li>";
     } ?>
 </ul>
 

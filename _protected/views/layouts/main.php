@@ -25,7 +25,7 @@ AppAsset::register($this);
  <!-- 1)Head -->
     <div id="logo">
         <div id="lineLogo">
-            <?php echo Html::a('News and URLs', Yii::$app->urlManager->baseUrl, ['id' => 'lineLogoHref']); ?>
+            <?php echo Html::a('News and URLs', Yii::$app->homeUrl, ['id' => 'lineLogoHref']); ?>
         </div>
     </div>
  <!-- 2)Content -->
@@ -35,6 +35,7 @@ AppAsset::register($this);
     </div>
 
 <?php $this->endBody() ?>
+
 </body>
 </html>
 <?php $this->endPage() ?>
