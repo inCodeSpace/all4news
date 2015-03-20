@@ -60,5 +60,5 @@ AppAssetAdm::register($this);
     <?= Html::submitButton('Добавить', ['class' => 'btn btn-success']) ?>
     <br>
     <!-- Очистка Img -->
-    <?= Html::a('Очистить News', ['/control/clear-images'], ['class' => 'btn btn-danger clearButt']); ?>
+    <?= Html::a('Очистить Images', ['/control/clear-images'], ['class' => 'btn btn-danger clearButt']); ?>
     <?php ActiveForm::end(); ?>
