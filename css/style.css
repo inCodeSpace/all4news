@@ -1,15 +1,20 @@
+/* ===================================================================
+   Style Reset
+=================================================================== */
 html, body {
 	padding: 0px;
 	margin: 0px;
 	background-color: #F0F0F0;
 }
 
+/* ===================================================================
+   1) Header Panel
+=================================================================== */
 #logo {
 	height: 87px;
-	width: 100%;
-	overflow: hidden;
 }
 #lineLogo {
+	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
 	height: 47px;
 	width: 100%;
 	position: absolute;
@@ -37,27 +42,18 @@ html, body {
 		letter-spacing: 5px;
 		font-weight: 900;
 		font-family: 'Freestyle Script';
+		text-decoration: none;
 	}
 	#lineLogoHref:hover {
 		color: red;
+		text-decoration: none;
 	}
-#logoImg {
-	display: block;
-	width: 72px;
-	height: 85px;
-	background: url(../img/4newsLogo1.png) no-repeat;
-	z-index: 2;
-	position: relative;
-	/*margin: auto;*/
-	margin-top: 2px;
-	margin-left: 2px;
-}
 
-#logoImg:hover {
-	background: url(../img/4newsLogo2.png) no-repeat;
-}
-
+/* ===================================================================
+   2) Content
+=================================================================== */
 #conteiner {
+	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
 	min-height: 300px;
 	width: 1300px;
 	margin: auto;
@@ -68,7 +64,12 @@ html, body {
 	padding: 10px;
 	box-shadow: #E2E2E2 -5px 5px 5px, #E2E2E2 5px 5px 5px;
 	text-align: center;
+	line-height: 24px;
 }
+
+    /* 2.2) Переопределение стилей Bootstrap
+    =============================================================== */
+    .label { padding-bottom: 2px; font-size: 14px; }
 
 ul {
 	margin-top: 0px;
@@ -89,7 +90,6 @@ a:hover {
 }
 
 a:visited {
-	/*color: #B6B6B6;*/
 	color: #4F4F4F;
 	color: grey;
 }
@@ -98,7 +98,7 @@ a:visited {
 	font-size: 27px;
 	color: orange;
 	font-family: Tahoma;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	letter-spacing: 9px;
 }
 
@@ -133,7 +133,9 @@ a:visited {
 	box-shadow: #F0D5FD 3px 3px 5px, #F0D5FD -3px 3px 5px;
 }
 
-/*��������� ������*/
+/* ===================================================================
+   3) Обработка данных (формы)
+=================================================================== */
 .mForm {
 	border: 1px solid #FFB88B;
 	border-radius: 2px;
@@ -142,6 +144,7 @@ a:visited {
 	background-color: #F9F9F9;
 	box-shadow: #A5CFEB 0px 0px 7px;
 	border-radius: 10px;
+	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
 }
 .form1 {
 	float: left;
@@ -158,10 +161,13 @@ a:visited {
 	background-color: #F9F9F9;
 }
 .mFormText {
-	font-size: 22px;
-	color: navy;	
+	font-size: 20px;
+	color: navy;
+	font-weight: normal;
 }
 .inputData {
+	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
+	width: 376px;
 	min-width: 80px;
 	min-height: 80px;
 	max-width: 500px;
@@ -169,6 +175,7 @@ a:visited {
 	border: 2px solid #A2A2A2;
 	padding: 5px;
 	border-radius: 5px;
+	line-height: 16px;
 }
 
 .sendDiv, #clearButtC {
@@ -214,4 +221,30 @@ a:visited {
 #clearButtC:hover {
 	color: green;
 	background-color: #F0F0F0;
+}
+    /* Добавление значка * для полей типа required (соотв. rules модели) */
+    div.required label:after {
+        content: " *";
+        color: #e13431;
+    }
+
+    /* .) 
+    =============================================================== */
+
+
+
+/* ===================================================================
+   4) Переопределение стилей Bootstrap
+=================================================================== */
+			/* Настройки для ссылок которые очищают данные в БД */
+.clearButt {
+    color: white;
+}
+.clearButt:visited {
+    color: white;
+}
+.clearButt {
+	margin-bottom: 10px;
+	float: right;
+	margin-right: 10px;
 }
