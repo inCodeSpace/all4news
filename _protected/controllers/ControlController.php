@@ -10,26 +10,19 @@ class ControlController extends Controller
 {
     /**
      * Метод выводит формы для заполнения
-     * Сохраняет данные (таб. News и табл. Images) в БД (при успешной валидации)
-     * для введенного URL для News определяет title страницы (по данному URL)
+     * Метод сохраняет данные (таб. News и табл. Images) в БД (при успешной валидации)
      */
     public function actionIndex()
     {
         $news = new News();
         $images = new Images();
         // если модель заполнена данными из POST и сохранение данных (вместе с валидацией)
-        // достаточно заполнение любой из форм (поле title для news заполнять не обязательно)
-        if ( 
-             (
-               $news->load(Yii::$app->request->post()) &&
-               $news->calculateUrlTitle() && // метод определения имени ссылки (по значению url)
-               $news->save()
-             ) ||
+        // достаточно полное заполнение либо одной либо 2-й формы
+        if ( ($news->load(Yii::$app->request->post()) && $news->save()) ||
              ($images->load(Yii::$app->request->post()) && $images->save())
             ) {
-            return $this->redirect(['/control/index']); // перенапривить сюда же (вывести заполнить форму)
-        }
-        else {
+            return $this->redirect(['/control/index']); // вывести заполнить форму
+        } else {
             return $this->render('create', [
                 'news' => $news,
                 'images' => $images
