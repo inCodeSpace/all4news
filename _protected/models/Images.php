@@ -38,7 +38,7 @@ class Images extends \yii\db\ActiveRecord
     {
         return [
             'images_id' => 'Images ID',
-            'url' => 'Url',
+            'url' => 'Url:',
         ];
     }
 }

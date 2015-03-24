@@ -38,7 +38,7 @@ class TableController extends Controller
             // Создание таблицы News с помощью DAO:
             Yii::$app->db->createCommand()->createTable('news', [
                 'news_id' => 'SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY',
-                'title' => 'VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL',
+                'title' => 'VARCHAR(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL',
                 'url' => 'VARCHAR(5000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL',
             ], $tableOptions)->execute();
             $model .= 'Таблица News создана.';

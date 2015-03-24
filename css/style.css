@@ -137,7 +137,8 @@ a:visited {
    3) Обработка данных (формы)
 =================================================================== */
 .mForm {
-	border: 1px solid #FFB88B;
+    /*border: 1px solid #FFB88B;*/
+	border: 1px solid white;
 	border-radius: 2px;
 	padding: 6px;
 	width: 600px;
@@ -165,25 +166,33 @@ a:visited {
 	color: navy;
 	font-weight: normal;
 }
+    label.mFormText {
+        vertical-align: top;
+        font-size: 17px;
+    }
 .inputData {
 	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
 	width: 376px;
 	min-width: 80px;
-	min-height: 80px;
-	max-width: 500px;
+    max-width: 420px;
+    min-height: 80px;
 	max-height: 120px;
 	border: 2px solid #A2A2A2;
 	padding: 5px;
 	border-radius: 5px;
 	line-height: 16px;
 }
-
+                /* Отдельные размеры для поля ввода названия ссылки */
+.inputDataTitle {
+    width: 345px;
+    min-height: 16px;
+    height: 26px;
+}
 .sendDiv, #clearButtC {
 	border: 2px solid #8BB2FF;
 	border-radius: 10px;
 	padding: 5px;
 	display: inline-block;
-	/*width: 80px;*/
 	text-align: center;
 	background: #ffffcc;
 	margin: auto;
@@ -204,7 +213,7 @@ a:visited {
 .inpButt {
 	background-color: #F8D1D1;
 }
-.formButLeft {	
+.formButLeft {
 	float: left;
 	margin-top: -8px;
 }

@@ -6,6 +6,9 @@ use yii\helpers\Html;
 <ul id="urlBox">
     <?php
     foreach ($news as $arr) {
+        if ($arr['title'] === '') { // если пустое значение новости.
+            $arr['title'] = 'сайт';
+        }
         echo '<li>' . Html::a($arr['title'], $arr['url'], ['target' => '_blank']) . "</li>";
     } ?>
 </ul>
