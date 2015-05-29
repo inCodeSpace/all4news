@@ -11,12 +11,12 @@ function expandPanel() {
     if (myPanel.clientHeight < myPanel.originalHeight - step) {
         var h = myPanel.clientHeight + step;
         myPanel.style.height = h+"px";
-        setTimeout("expandPanel()", 70);    
+        setTimeout("expandPanel()", 70);
     } else {
-        myPanTit2.style.display = "block";
+        myPanTit2.style.display = "inline-block";
         myPanel.style.height = "";
-        var myPanTit = document.getElementById("panel_title");
-        myPanTit.firstChild.nodeValue = "Свернуть";
+        //var myPanTit = document.getElementById("panel_title");
+        //myPanTit.firstChild.nodeValue = "Свернуть";
     }
 }
 //----------3)Ф-ия Сворачивания панели-------------//
@@ -30,7 +30,7 @@ function collapsePanel() {
         myPanTit2.style.display = "none";
         myPanel.style.display = "none";
         var myPanTit = document.getElementById("panel_title");
-        myPanTit.firstChild.nodeValue = "Развернуть";
+        myPanTit.firstChild.nodeValue = "Картинки";
     }
 }
 //----------1)Ф-ия Начального запуска-------------//
@@ -47,7 +47,7 @@ function changePanel() {
             }
             myPanel.style.display = "block"; // или просто ="" (отобразим панель)
             expandPanel(); //запустим ф-ию разворачивания панели
-            myPanTit.firstChild.nodeValue = "Свернуть";
+            myPanTit.firstChild.nodeValue = "▼";
         } else {
             myPanel.originalHeight = myPanel.clientHeight;
             if( urlBox != null ) { //если он существует
@@ -57,3 +57,4 @@ function changePanel() {
         }
     }
 }
+// ▲

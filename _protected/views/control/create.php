@@ -9,22 +9,18 @@ use app\assets\AppAssetAdm;
 /* @var $form yii\widgets\ActiveForm */
 
 AppAssetAdm::register($this);
-$this->registerCss('
-    /* Изменение фона страницы */
-#conteiner {
-    background-color: inherit;
-    border-radius: none;
-    box-shadow: none;
-}
-');
 ?>
+<?= Html::a('Таблица news', ['/control/news'], ['class' => 'btn btn-default buttonFlo']); ?>
+<?= Html::a('Таблица images', ['/control/images'], ['class' => 'btn btn-default buttonFlo']); ?>
+<br><br>
+
   <!-- Форма Добавление News -->
     <?php $form = ActiveForm::begin([
         // 'id' => 'my-form', // указать id-формы (по умолч. с bootstrap id=w0)
         'options' => ['class' => 'mForm form1'], // указать класс формы
     ]) ?>
     <br>
-    <span class="mFormText" style="color: green; letter-spacing: 1px;">Добавление News:</span><br><br>
+    <span class="mFormText" style="color: green;">Добавление News:</span><br><br>
 
     <?= $form->field($news, 'title')->textarea([
         'class' => 'inputData inputDataTitle',
@@ -46,7 +42,7 @@ $this->registerCss('
         'options' => ['class' => 'mForm form2'],
     ]) ?>
     <br>
-    <span class="mFormText" style="color: green; letter-spacing: 1px;">Добавление Img:</span><br><br>
+    <span class="mFormText" style="color: green;">Добавление Img:</span><br><br>
 
     <?= $form->field($images, 'url')->textarea([
         'class' => 'inputData',

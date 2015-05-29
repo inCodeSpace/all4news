@@ -18,6 +18,7 @@ html, body {
 	height: 47px;
 	width: 100%;
 	position: absolute;
+/*
 	background: -moz-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -moz-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -moz-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
 	background: -o-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -o-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -o-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
 	background: radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
@@ -25,7 +26,8 @@ html, body {
 	background-size: 15px 15px, 15px 15px, 100% 100%;
 	background-repeat: repeat, repeat, no-repeat;
 	background-position: 1px 1px, 0px 0px, center center;
-	background-color: #bababa;
+*/
+	background-color: white;
 	opacity: 0.5;
 	z-index: 1;
 	top: 39px;
@@ -59,10 +61,10 @@ html, body {
 	margin: auto;
 	margin-top: 3px;
 	overflow: hidden;
-	background-color: white;
-	border-radius: 15px;
+	/*background-color: white;*/
+	/*border-radius: 15px;*/
 	padding: 10px;
-	box-shadow: #E2E2E2 -5px 5px 5px, #E2E2E2 5px 5px 5px;
+	/*box-shadow: #E2E2E2 -5px 5px 5px, #E2E2E2 5px 5px 5px;*/
 	text-align: center;
 	line-height: 24px;
 }
@@ -78,11 +80,15 @@ ul {
 }
 
 a {
-	font-size: 22px;
 	text-decoration: none;
+	outline: none;
+}
+
+		   /* Стиль ссылок для главной страницы */
+a.newsUrl {
+	font-size: 22px;
 	color: #4F4F4F;
 	color: black;
-	outline: none;
 }
 
 a:hover {
@@ -102,40 +108,52 @@ a:visited {
 	letter-spacing: 9px;
 }
 
-#panel_title {
-	display: block;
-	border: 1px dashed green;
-	background-color: #F0FAFB;
+#panel_title, 
+#panel_title2 {
 	text-decoration: none;
-	color: red;
-	border-radius: 15px 15px 0px 0px;
+	color: #9DA5EC;
 	height: 30px;
 	line-height: 30px;
-	box-shadow: #F0D5FD -3px -2px 5px, #F0D5FD 3px -3px 5px;
+	background-color: #F8F8F8;
+	border: 1px solid #ebebeb;
+	font-size: 20px;
+	line-height: 30px;
+	padding: 2px 16px 2px;
 }
+#panel_title {
+    border-radius: 15px 15px 0 0;
+    box-shadow: -3px -2px 5px #E3E4FB, 3px -2px 5px #E3E4FB;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
 #panel_title2 {
 	display: none;
-	border: 1px dashed green;
 	border-top: none;
-	background-color: #F0FAFB;
-	text-decoration: none;
-	color: red;
 	border-radius: 0px 0px 15px 15px;
-	height: 30px;
-	line-height: 30px;
-	box-shadow: #F0D5FD -2px 2px 5px, #F0D5FD 3px 3px 5px;	
+	box-shadow: #E3E4FB -3px 2px 5px, #E3E4FB 3px 2px 5px;
+}
+#panel_title:hover,
+#panel_title2:hover {
+    background-color: white;
+    cursor:pointer;
+    color: orange;
 }
 #panel {
-	border: 1px dashed green;
 	border-top: 0px;
 	overflow-y: hidden;
 	overflow-x: auto;
-	box-shadow: #F0D5FD 3px 3px 5px, #F0D5FD -3px 3px 5px;
+	line-height: 0px;
+	font-size: 0px;
 }
 
 /* ===================================================================
    3) Обработка данных (формы)
 =================================================================== */
+.buttonFlo {
+    float: left;
+    margin-left: 20px;
+}
 .mForm {
     /*border: 1px solid #FFB88B;*/
 	border: 1px solid white;
@@ -162,13 +180,15 @@ a:visited {
 	background-color: #F9F9F9;
 }
 .mFormText {
-	font-size: 20px;
+	font-size: 21px;
 	color: navy;
 	font-weight: normal;
+	font-family: Calibri;
 }
     label.mFormText {
         vertical-align: top;
         font-size: 17px;
+        font-family: Arial;
     }
 .inputData {
 	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
@@ -188,16 +208,34 @@ a:visited {
     min-height: 16px;
     height: 26px;
 }
-.sendDiv, #clearButtC {
-	border: 2px solid #8BB2FF;
-	border-radius: 10px;
-	padding: 5px;
+#clearButtC {
 	display: inline-block;
 	text-align: center;
-	background: #ffffcc;
 	margin: auto;
+	font-family: Arial;
+	background-color: #fff;
+	border: 1px solid #ccc;
+    color: grey;
+	border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding: 6px 12px;
 }
 
+#clearButtC:hover {
+	color: orange;
+	background-color: #F0F0F0;
+}
+.empt { /* блок розпорка */
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding: 6px 12px;
+	display: inline-block;
+	padding-left: 350px;
+}
 .sendInp {
 	cursor: pointer;
 }
@@ -218,19 +256,6 @@ a:visited {
 	margin-top: -8px;
 }
 
-#clearButtC {
-	color: #1740CA;
-	padding-left: 10px;
-	padding-right: 10px;
-	box-shadow: #A5CFEB 0px 0px 7px;
-	display: inline-block;
-	float: right;
-}
-
-#clearButtC:hover {
-	color: green;
-	background-color: #F0F0F0;
-}
     /* Добавление значка * для полей типа required (соотв. rules модели) */
     div.required label:after {
         content: " *";
@@ -256,4 +281,73 @@ a:visited {
 	margin-bottom: 10px;
 	float: right;
 	margin-right: 10px;
+}
+
+/* ===================================================================
+   5) Стили для страницы с списком всех новостей (control/news)
+=================================================================== */
+.gridNews table tbody tr td { /* заголовок таблицы */
+	height: 20px;
+}
+.gridNews table thead tr th { /* заголовок таблицы */
+	text-align: center;
+	background-color: #FEFAE9;
+}
+.gridNews table tbody tr td + td { /* средняя ячейка */
+	text-align: left;
+	/*vertical-align: middle;*/
+	width: 840px;
+	/* Реализация обрезки длинной строки */
+	white-space: nowrap;
+	max-width: 840px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.gridNews table tbody tr td + td + td { /* последняя ячейка */
+	text-align: center;
+	width: 100px;
+}
+.gridNews table thead tr {
+	overflow: hidden;
+}
+
+/* 2-е линии для таблицы */
+.gridNews .table-bordered thead tr th,
+.gridNews .table-bordered thead tr td,
+.gridNews .table-bordered tbody tr td {
+	border-right: 2px solid #ddd;
+}
+.gridNews .table-bordered {
+	border: 2px solid #ddd;
+}
+
+.gridNews .gridUrlIn { /* изменение цвета ссылок внутри таблицы */
+	color: #333;
+}
+
+	/* Изменение отступа для пагинации */
+.pagination {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.formUpNews {
+	margin: auto;
+}
+
+/* ===================================================================
+   5) Стили для страницы с списком всех картинок (control/images)
+=================================================================== */
+.gridImg table tbody tr td { /* средняя ячейка */
+	text-align: left;
+	width: 840px;
+	/* Реализация обрезки длинной строки */
+	white-space: nowrap;
+	max-width: 840px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.gridImg table tbody tr td + td { /* последняя ячейка */
+	text-align: center;
+	width: 100px;
 }
