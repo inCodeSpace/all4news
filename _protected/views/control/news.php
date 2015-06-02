@@ -31,14 +31,13 @@ if (empty($dataProvider->models)) { // Если нет данных
             [ // учитывание пустого значения
                 'attribute' => 'title',
                 'label'=> 'Название новости:',
-                'value' => function($data) {
+                'value' => function($data) {  // либо передавать $model (тоже самое)
                     // вернуть либо значение из БД (если оно есть, иначе прочерк)
                     return $data->title ? $data->title : '- // -';
                 }
             ],
             [ // вывод данных обернутых в тег
                 'attribute' => 'url',
-                //'label'=> $data->url, // взять название из текущ. объекта
                 'format'=>'raw', // для возможности использования далее тега
                 'value' => function($data) {
                     return Html::a($data->url, $data->url, ['target' => '_blank', 'class' => 'gridUrlIn']);

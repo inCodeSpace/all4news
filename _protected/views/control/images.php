@@ -28,9 +28,8 @@ if (empty($dataProvider->models)) { // Если нет данных
         'columns' => [
             [ // вывод данных обернутых в тег
                 'attribute' => 'url',
-                //'label'=> $model->url, // взять название из текущ. объекта
                 'format'=>'raw', // для возможности использования далее тега
-                'value' => function($model) {
+                'value' => function($model) { // либо передавать $data (тоже самое)
                     return Html::a($model->url, $model->url, ['target' => '_blank', 'class' => 'gridUrlIn']);
                 }
             ],
