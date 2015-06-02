@@ -51,10 +51,9 @@ function changePanel() {
         } else {
             myPanel.originalHeight = myPanel.clientHeight;
             if( urlBox != null ) { //если он существует
-                urlBox.style.display = "block"; //спрятать контент с URLs
+                urlBox.style.display = "inline-block"; //спрятать контент с URLs
             }
             collapsePanel();
         }
     }
 }
-// ▲

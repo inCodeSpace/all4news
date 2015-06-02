@@ -51,8 +51,8 @@ if (YII_ENV_DEV) {
     // $config['bootstrap'][] = 'debug';
     // $config['modules']['debug'] = 'yii\debug\Module';
 
-    // $config['bootstrap'][] = 'gii';
-    // $config['modules']['gii'] = 'yii\gii\Module';
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = 'yii\gii\Module';
 }
 
 return $config;

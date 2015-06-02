@@ -9,7 +9,8 @@ use yii\helpers\Html;
         if ($arr['title'] === '') { // если пустое значение новости.
             $arr['title'] = 'сайт';
         }
-        echo '<li>' . Html::a($arr['title'], $arr['url'], ['target' => '_blank', 'class' => 'newsUrl']) . "</li>";
+        // echo '<li>' . Html::a($arr['title'], $arr['url'], ['target' => '_blank', 'class' => 'newsUrl']) . "</li>";
+        echo '<li>' . $arr['news_id'] . " " . Html::a($arr['title'], $arr['url'], ['target' => '_blank', 'class' => 'newsUrl']) . "</li>";
     } ?>
 </ul>
 
