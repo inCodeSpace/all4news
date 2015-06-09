@@ -5,7 +5,7 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use app\models\LoginForm;
-use app\models\SignupForm;
+//use app\models\SignupForm;
 
 class ProtectController extends Controller
 {
@@ -32,7 +32,7 @@ class ProtectController extends Controller
         Yii::$app->user->logout(); // выйти пользователю из системы
         return $this->goHome(); // отправить его на главную (не админ. страницу)
     }
-
+/*
     public function actionSignup() // Закоментировать для заливки на сервер
     {
         $model = new SignupForm(); // Создается объект модели
@@ -55,5 +55,5 @@ class ProtectController extends Controller
             'model' => $model,
         ]);
     }
-
+*/
 }
