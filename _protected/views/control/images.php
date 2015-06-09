@@ -17,6 +17,12 @@ if (empty($dataProvider->models)) { // Если нет данных
     ');
 }
 ?>
+
+<?php 
+// var_dump($dataProvider->models);
+// $model->getAttributeLabel('url')
+ ?>
+
 <div class="sport-news-index">
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -28,8 +34,9 @@ if (empty($dataProvider->models)) { // Если нет данных
         'columns' => [
             [ // вывод данных обернутых в тег
                 'attribute' => 'url',
+                //'label'=> $model->url, // взять название из текущ. объекта
                 'format'=>'raw', // для возможности использования далее тега
-                'value' => function($model) { // либо передавать $data (тоже самое)
+                'value' => function($model) {
                     return Html::a($model->url, $model->url, ['target' => '_blank', 'class' => 'gridUrlIn']);
                 }
             ],

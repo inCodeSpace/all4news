@@ -13,6 +13,21 @@ html, body {
 #logo {
 	height: 87px;
 }
+        /* Блок выход пользователя из сайта */
+    #userLogOut {
+        text-align: right;
+        padding-top: 4px;
+        padding-right: 10px;
+    }
+    #userLogOut a {
+        text-decoration: none;
+        color: green;
+        font-size: 17px;
+    }
+    #userLogOut a:hover {
+        color: red;
+    }
+
 #lineLogo {
 	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
 	height: 47px;
@@ -208,7 +223,7 @@ a:visited {
     min-height: 16px;
     height: 26px;
 }
-#clearButtC {
+.clearButtC {
 	display: inline-block;
 	text-align: center;
 	margin: auto;
@@ -225,11 +240,21 @@ a:visited {
     padding: 6px 12px;
 }
 
-#clearButtC:hover {
+.clearButtC:hover {
 	color: orange;
 	background-color: #F0F0F0;
 }
-.empt { /* блок розпорка */
+    /* Кнопка перейти к управлению контентом */
+.goAdmin {
+    margin-top: 0;
+    float: left;
+    background-color: #F0F8FF;
+}
+#clearBoth {
+    clear: both;
+}
+    /* блок розпорка */
+.empt {
     margin-bottom: 0;
     margin-top: 15px;
     padding: 6px 12px;

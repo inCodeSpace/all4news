@@ -6,6 +6,7 @@ use yii\web\Controller;
 use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 use yii\helpers\Url; // Для использования вызова сохраненной ранее ссылки
+use yii\filters\AccessControl;
 use app\models\Images;
 use app\models\News;
 
@@ -174,6 +175,23 @@ class ControlController extends Controller
         } else {
             throw new NotFoundHttpException('Данной записи не существует');
         }
+    }
+
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                /* Распространяется для всех действий */
+                'rules' => [
+                    [
+                        //'actions' => [''], закоментированно - Распространяется для всех действий
+                        'allow' => true, // разрешить обращение
+                        'roles' => ['@'], // залогиненым пользователям
+                    ],
+                ],
+            ],
+        ];
     }
 
 }

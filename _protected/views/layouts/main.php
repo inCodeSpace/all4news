@@ -20,8 +20,18 @@ AppAsset::register($this);
 
  <!-- 1)Head -->
     <div id="logo">
+
+     <!-- Блок выход пользователя из сайта -->
+        <div id="userLogOut">
+            <?php
+                if (Yii::$app->user->isGuest === false) {
+                    echo Html::a('LogOut', ['/protect/logout']);
+                }
+            ?>
+        </div>
+
         <div id="lineLogo">
-            <?php echo Html::a('News and URLs', Yii::$app->homeUrl, ['id' => 'lineLogoHref']); ?>
+            <?= Html::a('News and URLs', Yii::$app->homeUrl, ['id' => 'lineLogoHref']); ?>
         </div>
     </div>
  <!-- 2)Content -->
