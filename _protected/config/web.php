@@ -22,8 +22,8 @@ $config = [
             'enableAutoLogin' => true,
             // редирект для действия по умолчанию (вместо site/login)
             'loginUrl' => ['/protect/login'],
-            // редирект после успешной авторизации
-            'returnUrl' => ['/control/index'],
+            // редирект после успешной авторизации ( мешает работе $this->redirect(Url::previous()) )
+            //'returnUrl' => ['/control/index'],
         ],
         'errorHandler' => [
             'errorAction' => 'primary/error', // 3) Установить default controller errorAction
